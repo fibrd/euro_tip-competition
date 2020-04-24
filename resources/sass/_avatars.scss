@@ -1,0 +1,58 @@
+
+.avatar-controls{
+    display: inline;
+
+    .button{
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+
+        height: 4em;
+        font-weight: bold;
+
+        position: sticky;
+        top: 10px;
+        z-index: 10;
+
+        opacity: .8;
+        transition: opacity 0.2s ease;
+
+        &:hover,
+        &:focus{
+            opacity: 1;
+        }
+        
+    }
+}
+
+.avatar-container{
+    text-align: center;
+    position: relative;
+    margin-top: 2em;
+
+    .control{
+        display: inline;
+    }
+
+    img{
+        padding: 0.2em;
+    }
+
+    input{
+        position: absolute;
+        top: 0;
+        left: 5px;
+    }
+} 
+
+
+/**
+ * Media queries
+ * Avatar card
+ *
+ */
+@media screen and (max-width: 960px)
+{
+
+}
+ 

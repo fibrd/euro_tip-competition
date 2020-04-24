@@ -1,0 +1,38 @@
+/**
+* Table page
+*/
+table.table {
+    margin-top: 2em;
+    background-color: $background-primary;
+
+    td,
+    th:not([align]) {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    tr {
+        position: relative;
+    }
+
+    tr img {
+        transition: transform 0.25s ease-in-out;
+        width: 60%;
+        margin-top: 0.4em;
+    }
+
+    tr:hover img {
+        transform: scale(1.6);
+    }
+}
+
+/**
+ * 
+ * Users table
+ * 
+ */
+table.users-table {
+    tr img {
+        width: 2em;
+    }
+}

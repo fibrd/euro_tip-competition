@@ -1,0 +1,353 @@
+.navbar-brand,
+.navbar-menu {
+  background-color: #ededed;
+}
+
+.navbar-item {
+  color: #0084a4;
+  padding: 0.5em 1.5em;
+}
+
+a.navbar-item:hover,
+a.navbar-item:focus {
+  color: #ededed;
+  background-color: #0084a4;
+}
+
+.navbar-brand a.navbar-item:hover,
+.navbar-brand a.navbar-item:focus {
+  background-color: #0084a4;
+}
+
+.post-card {
+  background-color: rgba(0, 132, 164, 0.2);
+  margin: 2em auto;
+  width: 60%;
+  border-radius: 0.75em;
+  font-size: 1.4em;
+  overflow: hidden;
+}
+
+.post-card .card-footer {
+  text-align: center;
+  font-size: 0.8em;
+}
+
+.post-form {
+  width: 60%;
+  margin: 2em auto;
+}
+
+.post-form .button {
+  display: block;
+  width: 25%;
+}
+
+.card-footer-link {
+  text-align: center;
+  margin-top: 1em;
+  padding: 1.2em 2em;
+  font-weight: bold;
+  border-top: #0084a4 1px solid;
+  border-bottom: #0084a4 1px solid;
+}
+
+.breadcrumb ol,
+.breadcrumb ul {
+  justify-content: center;
+}
+
+/**
+* Pagination
+*/
+
+.pagination {
+  margin: 0 auto;
+  width: 50%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/**
+ * Media queries
+ * Posts card
+ *
+ */
+
+@media screen and (max-width: 960px) {
+  .post-form,
+  .post-form .button,
+  .post-card {
+    width: 100%;
+  }
+}
+
+.avatar-controls {
+  display: inline;
+}
+
+.avatar-controls .button {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  height: 4em;
+  font-weight: bold;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 10px;
+  z-index: 10;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.avatar-controls .button:hover,
+.avatar-controls .button:focus {
+  opacity: 1;
+}
+
+.avatar-container {
+  text-align: center;
+  position: relative;
+  margin-top: 2em;
+}
+
+.avatar-container .control {
+  display: inline;
+}
+
+.avatar-container img {
+  padding: 0.2em;
+}
+
+.avatar-container input {
+  position: absolute;
+  top: 0;
+  left: 5px;
+}
+
+/**
+ * Media queries
+ * Avatar card
+ *
+ */
+
+/**
+ * Profile
+ */
+
+.profile-card {
+  margin: 0 auto;
+  max-width: 20em;
+  background-color: rgba(0, 132, 164, 0.2);
+}
+
+.big-avatar {
+  padding-top: 4em;
+  padding-bottom: 1em;
+}
+
+/**
+* Table page
+*/
+
+table.table {
+  margin-top: 2em;
+  background-color: #fafafa;
+}
+
+table.table td,
+table.table th:not([align]) {
+  text-align: center;
+  vertical-align: middle;
+}
+
+table.table tr {
+  position: relative;
+}
+
+table.table tr img {
+  transition: transform 0.25s ease-in-out;
+  width: 60%;
+  margin-top: 0.4em;
+}
+
+table.table tr:hover img {
+  transform: scale(1.6);
+}
+
+/**
+ * 
+ * Users table
+ * 
+ */
+
+table.users-table tr img {
+  width: 2em;
+}
+
+article.message {
+  margin: 4em auto;
+  border: #0084a4 1px solid;
+  max-width: 360px;
+}
+
+html {
+  background-color: #fafafa;
+}
+
+body {
+  margin: 0;
+  font-family: Nunito, sans-serif;
+}
+
+a {
+  color: #0084a4;
+}
+
+section.section {
+  padding: 2em 1.2em;
+}
+
+/**
+ * Page heading colors
+ */
+
+.subtitle,
+.title {
+  color: #0084a4;
+}
+
+.big-logo {
+  max-width: 25em;
+  margin: 0 auto;
+}
+
+/**
+ * LOGO img
+ *
+ */
+
+.big-logo img {
+  margin: 0 auto;
+  max-width: 25em;
+  width: 80%;
+}
+
+/**
+ * Default button
+ *
+ */
+
+.button.is-default {
+  width: 100%;
+  border-radius: 0;
+}
+
+/**
+ * Main footer w/ copyright
+ */
+
+footer.main-footer {
+  text-align: right;
+}
+
+/**
+ * 
+ * BULMA alert css for laracast/flash package
+ * 
+ */
+
+.alert,
+.notification {
+  background-color: whitesmoke;
+  border-radius: 3px;
+  padding: 1.25rem 2.5rem 1.25rem 1.5rem;
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.home .alert,
+.home .notification {
+  margin-bottom: 2.5rem;
+}
+
+.alert a:not(.button) {
+  color: currentColor;
+  text-decoration: underline;
+}
+
+.alert strong {
+  color: currentColor;
+}
+
+.alert code,
+.alert pre {
+  background: white;
+}
+
+.alert pre code {
+  background: transparent;
+}
+
+.alert > .delete {
+  position: absolute;
+  right: 0.5em;
+  top: 0.5em;
+}
+
+.alert .title,
+.alert .subtitle,
+.alert .content {
+  color: currentColor;
+}
+
+.alert-success {
+  background-color: #23d160;
+  color: #fff;
+}
+
+.alert-warning {
+  background-color: #ffdd57;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.alert-danger {
+  background-color: #ff3860;
+  color: #fff;
+}
+
+.notification,
+.alert {
+  transition: opacity 0.5s ease;
+}
+
+.fade-me-out {
+  opacity: 0;
+}
+
+/**
+ * Media queries
+ * Overflow hidden
+ *
+ */
+
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 90%;
+  }
+
+  .title.is-1 {
+    font-size: 2rem;
+  }
+
+  .subtitle.is-2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .media-content {
+    overflow-x: initial;
+  }
+}
+

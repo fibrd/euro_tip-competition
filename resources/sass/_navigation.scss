@@ -1,0 +1,18 @@
+.navbar-brand,
+.navbar-menu {
+    background-color: lighten($background-menu, 22);
+}
+
+.navbar-item {
+    color: $text-heading;
+    padding: 0.5em 1.5em;
+}
+
+a.navbar-item:hover,
+a.navbar-item:focus {
+    color: lighten($background-menu, 22);
+    background-color: $text-heading;
+    .navbar-brand & {
+        background-color: $text-heading;
+    }
+}
