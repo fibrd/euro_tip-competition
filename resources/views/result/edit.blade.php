@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('header')
-    {{ __('Edit result') }}
+    {{ __('Upravit výsledek') }}
 @endsection
 
 @section('content')
@@ -56,7 +56,7 @@
 
             <div class="message-footer">
                 <div class="field">
-                    <input class="button is-primary is-default" type="submit" value="{{ __('Edit') }}">
+                    <input class="button is-primary is-default" type="submit" value="{{ __('Upravit') }}">
                 </div>
             </div>
         </article>

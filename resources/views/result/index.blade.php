@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('header')
-    {{ __('Results') }}
+    {{ __('Výsledky') }}
 @endsection
 
 @section('content')
@@ -9,9 +9,9 @@
 <table class="table is-fullwidth">
     <thead>
         <tr>
-            <th>HOME</th>
-            <th>AWAY</th>
-            <th>RESULT</th>
+            <th>Domácí</th>
+            <th>Hosté</th>
+            <th>Výsledek</th>
             <th>EDIT</th>
             <th>DELETE</th>
         </tr>   
@@ -23,11 +23,11 @@
                 <td>{{ $match->team_away->abbreviation }}</td>
                 @if (isset( $match->result->score ))
                     <td>{{ $match->result->score }}</td>
-                    <td><a href="{{ route('result.edit', $match->id) }}">edit</a></td>
-                    <td><a href="{{ route('result.delete', $match->id) }}">delete</a></td>
+                    <td><a href="{{ route('result.edit', $match->id) }}">upravit</a></td>
+                    <td><a href="{{ route('result.delete', $match->id) }}">vymazat</a></td>
                 @else
                     <td>--</td>
-                    <td><a href="{{ route('result.edit', $match->id) }}">create</a></td>
+                    <td><a href="{{ route('result.edit', $match->id) }}">vytvořit</a></td>
                     <td>--</td>
                 @endif
             </tr> 

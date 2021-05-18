@@ -1,11 +1,7 @@
 @extends('layouts.master')
 
-@section('title', 'alias')
-    
-@endsection
-
 @section('header')
-    {{ __('Edit alias') }}
+    {{ __('Upravit alias') }}
 @endsection
 
 @section('content')
@@ -31,7 +27,7 @@
             </div>
            
             <div class="field">
-                <input class="button is-primary is-default" type="submit" value="{{ __('Edit') }}">
+                <input class="button is-primary is-default" type="submit" value="{{ __('Upravit') }}">
             </div>
 
         </article>

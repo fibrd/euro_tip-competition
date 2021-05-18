@@ -16,7 +16,7 @@
 
             <input type="hidden" name="_method" value="put">
             <div class="form-group">
-                <input class="button is-primary is-default" type="submit" value="{{ __('Add participant') }}">
+                <input class="button is-primary is-default" type="submit" value="{{ __('Přidat soutěžícího') }}">
             </div>
         </form>
     </article>

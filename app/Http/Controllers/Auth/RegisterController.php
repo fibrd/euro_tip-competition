@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Register Controller
     |--------------------------------------------------------------------------
@@ -25,86 +25,86 @@ class RegisterController extends Controller
     |
     */
 
-    use RegistersUsers;
+  use RegistersUsers;
 
 
-    /**
-     * Handle a registration request for the application.
-     * 
-     * Extracted from trait AuthenticatesUsers (vendor) to be able to make 
-     * customizable flash messages after the successful registration
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function register(Request $request)
-    {
-        $this->validator($request->all())->validate();
+  /**
+   * Handle a registration request for the application.
+   * 
+   * Extracted from trait AuthenticatesUsers (vendor) to be able to make 
+   * customizable flash messages after the successful registration
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @return \Illuminate\Http\Response
+   */
+  public function register(Request $request)
+  {
+    $this->validator($request->all())->validate();
 
-        event(new Registered($user = $this->create($request->all())));
+    event(new Registered($user = $this->create($request->all())));
 
-        $this->guard()->login($user);
+    $this->guard()->login($user);
 
-        if ($response = $this->registered($request, $user)) {
-            return $response;
-        }
-        
-        // flash()->success('Welcome, ' . Auth::user()->fullname . '!');
-        session()->flash('flash-message', 'Welcome, ' . Auth::user()->fullname . '!'); //customizable flash messages after registration
-        return $request->wantsJson()
-                    ? new Response('', 201)
-                    : redirect($this->redirectPath());
+    if ($response = $this->registered($request, $user)) {
+      return $response;
     }
 
+    // flash()->success('Welcome, ' . Auth::user()->fullname . '!');
+    session()->flash('flash-message', 'Vítejte, ' . Auth::user()->fullname . '!'); //customizable flash messages after registration
+    return $request->wantsJson()
+      ? new Response('', 201)
+      : redirect($this->redirectPath());
+  }
 
 
-    /**
-     * Where to redirect users after registration.
-     *
-     * @var string
-     */
-    protected $redirectTo = RouteServiceProvider::HOME;
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('guest');
-    }
+  /**
+   * Where to redirect users after registration.
+   *
+   * @var string
+   */
+  protected $redirectTo = RouteServiceProvider::HOME;
 
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'firstname' => ['required', 'string', 'max:255'],
-            'lastname' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:5', 'confirmed'],
-        ]);
-    }
+  /**
+   * Create a new controller instance.
+   *
+   * @return void
+   */
+  public function __construct()
+  {
+    $this->middleware('guest');
+  }
 
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return \App\User
-     */
-    protected function create(array $data)
-    {
-        return User::create([
-            'firstname' => $data['firstname'],
-            'lastname' => $data['lastname'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'avatar' => 'img/avatars/svg/020-man-7.svg',
-        ]);
-    }
+  /**
+   * Get a validator for an incoming registration request.
+   *
+   * @param  array  $data
+   * @return \Illuminate\Contracts\Validation\Validator
+   */
+  protected function validator(array $data)
+  {
+    return Validator::make($data, [
+      'firstname' => ['required', 'string', 'max:255'],
+      'lastname' => ['required', 'string', 'max:255'],
+      'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+      'password' => ['required', 'string', 'min:5', 'confirmed'],
+    ]);
+  }
+
+  /**
+   * Create a new user instance after a valid registration.
+   *
+   * @param  array  $data
+   * @return \App\User
+   */
+  protected function create(array $data)
+  {
+    return User::create([
+      'firstname' => $data['firstname'],
+      'lastname' => $data['lastname'],
+      'email' => $data['email'],
+      'password' => Hash::make($data['password']),
+      'avatar' => 'img/avatars/svg/020-man-7.svg',
+    ]);
+  }
 }

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('header')
-    {{ __('My Profile') }}
+    {{ __('Můj profil') }}
 @endsection
 
 @section('content')
@@ -26,20 +26,20 @@
             </div>
       
             <div class="content">
-                <strong>{{ __('User registred: ') }}</strong><time datetime="{{ $user->created_at->format('Y-m-d H:i:s') }}">{{ $user->created_at->format('jS F Y, H:i') }}</time>
+                <strong>{{ __('Registrován: ') }}</strong><time datetime="{{ $user->created_at->format('Y-m-d H:i:s') }}">{{ $user->created_at->format('jS F Y, H:i') }}</time>
                 <br>
                 @if (isset($user->participant))
-                    {{ __('This user has already been confirmed as the valid participant.') }}
+                    {{ __('Tento uživatel už je platný soutěžícím tipovačky.') }}
                 @else 
-                    {{ __('This user has not been validated yet.') }}
+                    {{ __('Tento uživatel ještě není ověřen.') }}
                 @endif
             </div>
 
             <div class="card-footer columns">
-                <a href="{{ route('avatar') }}" class="card-footer-link column">Edit Avatar</a>
+                <a href="{{ route('avatar') }}" class="card-footer-link column">Avatar</a>
 
                 <a href="{{ route('logout') }}" class="card-footer-link column" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                    {{ __('Logout') }}
+                    {{ __('Odhlásit') }}
                 </a>
             </div>
             

@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }} / {{ $title ?? 'EURO 2020' }} </title>
+    <title>{{ config('app.name', 'Laravel') }} / {{ $title ?? 'MS 2021' }} </title>
 
     <!-- Scripts -->
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
@@ -60,7 +60,7 @@
                 @section('footer')
                 <small>
 
-                    <p>Feel free to contact us. We appreciate getting your feedback or any other thoughts. <br> Email: <a href="mailto:euro-tipovacka@seznam.cz">euro-tipovacka@seznam.cz</a></p>
+                    <p>V případě dotazů či připomínek nás neváhejte kontaktovat. <br> Email: <a href="mailto:euro-tipovacka@seznam.cz">euro-tipovacka@seznam.cz</a></p>
                     <hr>
                     &copy; DF 2020
                 </small> 

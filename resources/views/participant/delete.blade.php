@@ -16,7 +16,7 @@
 
             <input type="hidden" name="_method" value="delete">
             <div class="form-group">
-                <input class="button is-primary is-default" type="submit" value="{{ __('Remove') }}">
+                <input class="button is-primary is-default" type="submit" value="{{ __('Odebrat') }}">
             </div>
         </form>
     </article>

@@ -1,12 +1,12 @@
 @extends('layouts.master')
 
 @section('header')
-    {{ __('Edit tips') }}
+    {{ __('Upravit tipy') }}
 @endsection
 
 @section('content')
 
-<form action="{{ route('tip.update', Auth::id()) }}" method="post" onsubmit="return confirm('Really wanna edit your tips?')">
+<form action="{{ route('tip.update', Auth::id()) }}" method="post" onsubmit="return confirm('Opravdu chcete upravit vaše tipy?')">
     @csrf
     <input type="hidden" name="_method" value="put">
     
@@ -60,7 +60,7 @@
     @endforeach
     
     <div class="field">
-        <input class="button is-primary is-default" type="submit" value="{{ __('Edit') }}">
+        <input class="button is-primary is-default" type="submit" value="{{ __('Upravit') }}">
     </div>
  
 

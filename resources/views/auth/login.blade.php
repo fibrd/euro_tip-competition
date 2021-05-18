@@ -1,10 +1,10 @@
 @extends('layouts.master')
 
-@section('title', 'Login form')
+@section('title', 'Přihlášení')
 
 @section('header')
     <h3 class="subtitle is-2">
-        {{ __('Login Form') }}
+        {{ __('Přihlášení') }}
     </h3>
 @endsection
 
@@ -25,7 +25,7 @@
 
     <div class="field">
         <div class="control has-icons-right">
-            <input class="input" name="password" type="password" placeholder="{{ __('password') }}">
+            <input class="input" name="password" type="password" placeholder="{{ __('heslo') }}">
             <span class="icon is-small is-right">
                 <i class="fas fa-key"></i>
             </span>
@@ -36,12 +36,9 @@
     <div class="field">
         @if (Route::has('password.request'))
             <div class="control has-text-right">
-                <a href="{{ route('facebook') }}" class="button is-light is-small">
-                    <i class="fab fa-facebook"></i>{{ __('acebook Instant Login ') }}
-                </a>
 
                 <a href="{{ route('password.request') }}" class="button is-light is-small">
-                    {{ __('Forgot Your Password?') }}
+                    {{ __('Zapomněli jste heslo?') }}
                 </a>
              
             </div>
@@ -52,10 +49,7 @@
 
     <div class="field is-grouped">
         <div class="control">
-            <input type="submit" class="button is-link" value="{{ __('Login') }}">
-        </div>
-        <div class="control">
-            <a href="{{ route('register') }}" class="button is-link is-light">{{ __('Register form') }}</a>
+            <input type="submit" class="button is-link" value="{{ __('Přihlásit') }}">
         </div>
         
     </div>

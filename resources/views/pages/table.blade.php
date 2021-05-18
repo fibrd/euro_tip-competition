@@ -1,9 +1,9 @@
 @extends('layouts.master')
 
-@section('title', 'Table')
+@section('title', 'Tabulka')
 
 @section('header')
-    {{ __('Table') }}
+    {{ __('Tabulka') }}
 @endsection
 
 @section('content')
@@ -13,7 +13,7 @@
     <table class="table is-bordered is-narrow is-hoverable is-fullwidth">
         <thead>
             <tr>
-                <th colspan="4">Final results</th>
+                <th colspan="4">Konečné výsledky</th>
 
                 @foreach ($matches as $match)
                     <th>{{ $match->result['score'] }}</th>
@@ -22,8 +22,8 @@
             <tr>
                 <th>#</th>
                 <th>Avatar</th>
-                <th>User</th>
-                <th>Score</th>
+                <th>Uživatel</th>
+                <th>Skóre</th>
                 @foreach ($matches as $match)
                     <th>{{ $match->team_home->abbreviation }} vs. {{ $match->team_away->abbreviation }}</th>
                 @endforeach
@@ -48,8 +48,7 @@
 </div>
 
 <small>
-    Users' accounts are inserted in this updated list of confirmed participants right after the admin validing.
-    It is not possible to participate in the competition after the championship starts. 
+  Uživatelské účty jsou na tomto aktualizovaném seznamu tipujících zobrazeny až po validaci adminem.
 </small>  
 
 @endsection

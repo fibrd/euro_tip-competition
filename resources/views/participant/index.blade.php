@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('header')
-    {{ __('Users') }}
+    {{ __('Uživatelé') }}
 @endsection
 
 @section('content')
@@ -10,9 +10,9 @@
         <thead>
             <tr>
                 <th>Avatar</th>
-                <th>User</th>
+                <th>Uživatel</th>
                 <th>Alias</th>
-                <th>Validate</th>
+                <th>Ověřit</th>
             </tr>
         </thead>
         <tbody>
@@ -26,9 +26,9 @@
                     </td>
                     <td><a href="{{ route('alias', $user->id) }}">{{ $user->alias }}</a></td>
                     @if (isset($user->participant))
-                        <td><a href="{{ route('participant.delete', $user->id) }}"><i class="fas fa-user-minus"></i> remove</a></td>
+                        <td><a href="{{ route('participant.delete', $user->id) }}"><i class="fas fa-user-minus"></i> odebrat</a></td>
                     @elseif( $user->tips->first() != null )
-                        <td><a href="{{ route('participant.edit', $user->id) }}"><i class="fas fa-user-plus"></i> add</a></td>
+                        <td><a href="{{ route('participant.edit', $user->id) }}"><i class="fas fa-user-plus"></i> přidat</a></td>
                     @else
                         <td>--</td>
                     @endif

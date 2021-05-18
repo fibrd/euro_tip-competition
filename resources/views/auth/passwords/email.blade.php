@@ -17,7 +17,7 @@
     <div class="field is-grouped">
         <div class="control">
             <button type="submit" class="button button-primary">
-                {{ __('Send Password Reset Link') }}
+                {{ __('Poslat link na reset hesla') }}
             </button>
         </div>
     </div>

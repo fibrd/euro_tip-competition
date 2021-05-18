@@ -1,7 +1,7 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a class="navbar-item" href="{{ route('home') }}">
-            <strong>EURO 2020</strong>
+            <strong>MS v Hokeji 2021</strong>
         </a>
     
         <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -16,33 +16,33 @@
             <div class="navbar-start">
 
                 <a href="{{ route('rules') }}" class="navbar-item">
-                    {{ __('Rules') }}
+                    {{ __('Pravidla') }}
                 </a>
 
                 <a href="{{ route('post.index') }}" class="navbar-item">
-                    {{ __('Posts') }}
+                    {{ __('Příspěvky') }}
                 </a>
 
                 <a href="{{ route('table') }}" class="navbar-item">
-                    {{ __('Table') }}
+                    {{ __('Tabulka') }}
                 </a>
                 
                 <a href="{{ route('tip.index') }}" class="navbar-item">
-                    {{ __('Tips') }}
+                    {{ __('Moje tipy') }}
                 </a>
                 
                 @can('admin')
                     <a href="{{ route('result.index') }}" class="navbar-item">
-                        {{ __('Results') }}
+                        {{ __('Výsledky') }}
                     </a>
 
                     <a href="{{ route('participant.index') }}" class="navbar-item">
-                        {{ __('Users') }}
+                        {{ __('Uživatelé') }}
                     </a>
                 @endcan
 
                 <a href="{{ route('profile') }}" class="navbar-item">
-                    {{ __('Profile') }}
+                    {{ __('Profil') }}
                 </a>
             
             </div>
@@ -54,10 +54,10 @@
                     <div class="buttons">
                 
                         <a href="{{ route('register') }}" class="button is-link">
-                            {{ __('Sign up') }}
+                            {{ __('Registrace') }}
                         </a>
                         <a href="{{ route('login') }}" class="button is-link">
-                            {{ __('Log in') }}
+                            {{ __('Přihlášení') }}
                         </a>
                             
                     </div>

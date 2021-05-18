@@ -14,7 +14,7 @@
     </div>
 
     <div class="field">
-        <label for="password" class="label">{{ __('Password') }}</label>
+        <label for="password" class="label">{{ __('Heslo') }}</label>
         <div class="control has-icons-right">
             <input id="password" type="password" class="input" name="password" required autocomplete="new-password">
 
@@ -26,7 +26,7 @@
     </div>
 
     <div class="field">
-        <label for="password-confirm" class="label">{{ __('Confirm Password') }}</label>
+        <label for="password-confirm" class="label">{{ __('Potvrďte heslo') }}</label>
         <div class="control has-icons-right">
 
             <input id="password-confirm" type="password" class="input" name="password_confirmation" required autocomplete="new-password">
@@ -43,7 +43,7 @@
     <div class="field is-grouped">
         <div class="control">
             <button type="submit" class="button button-primary">
-                {{ __('Reset Password') }}
+                {{ __('Reset hesla') }}
             </button>
         </div>
     </div>

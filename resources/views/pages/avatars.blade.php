@@ -11,7 +11,7 @@
 
     {!! link_back() !!}
     <div class="avatar-controls">
-        <input type="submit" class="button is-link" value=" {{__('Submit') }}">
+        <input type="submit" class="button is-link" value=" {{__('Vybrat') }}">
     </div>
         
     @csrf

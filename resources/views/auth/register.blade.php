@@ -1,10 +1,10 @@
 @extends('layouts.master')
 
-@section('title', 'Register form')
+@section('title', 'Registrace')
 
 @section('header')
     <h3 class="subtitle is-2">
-        {{ __('Register Form') }}
+        {{ __('Registrace') }}
     </h3>
 @endsection
 
@@ -15,7 +15,7 @@
 
     <div class="field">
         <div class="control has-icons-right">
-            <input class="input" name="firstname" type="text" placeholder="{{ __('firstname') }}" value="{{ old('firstname') }}" required autofocus>
+            <input class="input" name="firstname" type="text" placeholder="{{ __('jméno') }}" value="{{ old('firstname') }}" required autofocus>
             <span class="icon is-small is-right">
                 <i class="fas fa-user"></i>
             </span>
@@ -24,7 +24,7 @@
 
     <div class="field">
         <div class="control has-icons-right">
-            <input class="input" name="lastname" type="text" placeholder="{{ __('lastname') }}"  value="{{ old('lastname') }}" required>
+            <input class="input" name="lastname" type="text" placeholder="{{ __('příjmení') }}"  value="{{ old('lastname') }}" required>
             <span class="icon is-small is-right">
                 <i class="fas fa-user"></i>
             </span>
@@ -42,7 +42,7 @@
 
     <div class="field">
         <div class="control has-icons-right">
-            <input class="input" name="password" type="password" placeholder="{{ __('password') }}">
+            <input class="input" name="password" type="password" placeholder="{{ __('heslo') }}">
             <span class="icon is-small is-right">
                 <i class="fas fa-key"></i>
             </span>
@@ -51,7 +51,7 @@
 
     <div class="field">
         <div class="control has-icons-right">
-            <input class="input" name="password_confirmation" type="password" placeholder="{{ __('password again') }}">
+            <input class="input" name="password_confirmation" type="password" placeholder="{{ __('heslo znovu') }}">
             <span class="icon is-small is-right">
                 <i class="fas fa-key"></i>
             </span>
@@ -60,10 +60,7 @@
 
     <div class="field is-grouped has-margin-top-1">
         <div class="control">
-            <input type="submit" class="button is-link" value="{{ __('Sign up') }}">
-        </div>
-        <div class="control">
-            <a href="{{ URL::previous() }}" class="button is-link is-light">{{ __('Login form') }}</a>
+            <input type="submit" class="button is-link" value="{{ __('Registrovat') }}">
         </div>
     </div>
 

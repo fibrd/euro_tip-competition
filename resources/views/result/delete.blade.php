@@ -24,7 +24,7 @@
         </div>
         <div class="message-footer">
             <div class="field">
-                <input class="button is-primary is-default" type="submit" value="{{ __('Delete') }}">
+                <input class="button is-primary is-default" type="submit" value="{{ __('Vymazat') }}">
             </div>
         </div>
     </article>

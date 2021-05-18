@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('header')
-    {{ __('Posts') }}
+    {{ __('Příspěvky') }}
 @endsection
 
 @section('content')
@@ -11,11 +11,11 @@
         
     <div class="field">
         <div class="control">
-            <textarea class="postarea textarea is-light" style="resize: none;" name="post" maxlength="200" cols="30" rows="4" placeholder="{{ __('What are you thinking about?') }}"></textarea>
+            <textarea class="postarea textarea is-light" style="resize: none;" name="post" maxlength="200" cols="30" rows="4" placeholder="{{ __('Co nám napíšeš pěkného?') }}"></textarea>
         </div>
     </div>
     @include('partials.emojis')
-    <input class="button is-light" type="submit" value="{{ __('Submit') }}">
+    <input class="button is-light" type="submit" value="{{ __('Odeslat') }}">
 </form>
 
 @foreach ($posts as $post)
@@ -35,7 +35,7 @@
             <p class="card-footer-item"><img src="{{ asset($post->user->avatar) }}" alt="avatar" width="55"></p>
             <time class="card-footer-item" datetime="{{ $post->created_at->format('Y-m-d') }}">{{ $post->created_at->diffForHumans() }}</time>
             @can ('delete-post', $post)
-                <a href="{{ route('post.show', $post->id) }}" class="card-footer-item">Delete</a>
+                <a href="{{ route('post.show', $post->id) }}" class="card-footer-item">Vymazat</a>
             @endcan
             
         </footer>

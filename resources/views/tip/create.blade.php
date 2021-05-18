@@ -1,12 +1,12 @@
 @extends('layouts.master')
 
 @section('header')
-    {{ __('Add tips') }}
+    {{ __('Nové tipy') }}
 @endsection
 
 @section('content')
 
-<form action="{{ route('tip.store') }}" method="post" onsubmit="return confirm('Really wanna submit your tips?')">
+<form action="{{ route('tip.store') }}" method="post" onsubmit="return confirm('Opravdu chcete odeslat takto vyplněné tipy?')">
     @csrf
     @foreach ($matches as $match_id => $match)
 
@@ -50,7 +50,7 @@
     @endforeach
 
     <div class="field">
-        <input class="button is-primary is-default" type="submit" value="{{ __('Add') }}">
+        <input class="button is-primary is-default" type="submit" value="{{ __('Přidat') }}">
     </div>
 
 
