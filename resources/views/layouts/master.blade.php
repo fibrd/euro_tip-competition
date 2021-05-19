@@ -31,7 +31,13 @@
             {{-- @include('flash::message') --}}
             <div id="app">
                 @if (session('flash-message'))
-                    <flash-message text="{{ session('flash-message') }}" ></flash-message>
+                  <flash-message text="{{ session('flash-message') }}" variant="success"></flash-message>
+                @endif
+                @if (session('flash-error'))
+                  <flash-message text="{{ session('flash-error') }}" variant="error"></flash-message>
+                @endif
+                @if (session('flash-warning'))
+                  <flash-message text="{{ session('flash-warning') }}" variant="warning"></flash-message>
                 @endif
             </div>
             @yield('code')

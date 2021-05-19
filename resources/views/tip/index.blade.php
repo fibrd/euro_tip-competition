@@ -8,7 +8,7 @@
 
 @if ( isset($tips) )
 
-<a href="{{ route('tip.edit', $tips->id) }}" class="button is-primary is-default">{{ __('Upravit mé tipy') }}</a>
+<a href="{{ route('tip.edit', $tips->id) }}" class="button is-link is-default">{{ __('Upravit mé tipy') }}</a>
 <table class="table is-fullwidth">
 
     <thead>

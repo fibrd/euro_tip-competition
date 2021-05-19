@@ -51,6 +51,9 @@
         <div class="control">
             <input type="submit" class="button is-link" value="{{ __('Přihlásit') }}">
         </div>
+        <div class="control">
+          <a href="{{ route('register') }}" class="button is-link is-light">{{ __('Registrace') }}</a>
+      </div>
         
     </div>
 

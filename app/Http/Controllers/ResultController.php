@@ -87,8 +87,8 @@ class ResultController extends Controller
         $result->updatePlayersScore();
 
         // flash
-        flash()->success('The result was created successfully.');
-        flash()->warning('All players score have been updated.');
+        session()->flash('flash-message', 'Výsledek byl úspěšně přidán.');
+        session()->flash('flash-warning', 'Všem hráčům se aktualizovalo skóre.');
         return redirect()->route('result.index');
     }
 
@@ -122,8 +122,8 @@ class ResultController extends Controller
         $result->updatePlayersScore();
 
         // flash
-        flash()->success('The result has been updated.');
-        flash()->warning('All players score have been updated.');
+        session()->flash('flash-message', 'Výsledek byl úspěšně aktualizován.');
+        session()->flash('flash-warning', 'Všem hráčům se aktualizovalo skóre.');
         return redirect()->route('result.index');
     }
 
@@ -168,8 +168,8 @@ class ResultController extends Controller
         }
 
         //flash
-        flash()->warning('The result was deleted.');
-        flash()->warning('All players score have been updated.');
+        session()->flash('flash-warning', 'Výsledek byl vymazán.');
+        session()->flash('flash-warning', 'Všem hráčům se aktualizovalo skóre.');
         return redirect()->route('result.index');
 
     }

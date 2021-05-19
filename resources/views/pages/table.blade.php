@@ -27,6 +27,16 @@
                 @foreach ($matches as $match)
                     <th>{{ $match->team_home->abbreviation }} vs. {{ $match->team_away->abbreviation }}</th>
                 @endforeach
+                <th>Střelec</th>
+                <th>Kan. bodování</th>
+                <th>1. místo</th>
+                <th>2. místo</th>
+                <th>3. místo</th>
+                <th>4. místo</th>
+                <th>5.-8. místo</th>
+                <th>5.-8. místo</th>
+                <th>5.-8. místo</th>
+                <th>5.-8. místo</th>
             </tr>
         </thead>
 
@@ -37,10 +47,20 @@
                     <td><img src="{{ asset($participant->user->avatar) }}" alt="avatar" class="table-avatar" width="25"></td>
                     <td>{{ $participant->user->alias }}</td>
                     <td>{{ $participant->score }}</td>
-                
+                    
                     @foreach ($participant->user->tips[0]->tips as $tip)
-                        <td>{{ $tip[0] }}:{{ $tip[1] }}</td>          
-                    @endforeach
+                      <td>{{ $tip[0] }}:{{ $tip[1] }}</td>          
+                    @endforeach 
+                    <td>{{ $participant->user->tips[0]->players[0] }}</td>
+                    <td>{{ $participant->user->tips[0]->players[3] }}</td>
+                    <td>{{ $teams[ $participant->user->tips[0]->placement[0] - 1 ]->abbreviation }}</td>
+                    <td>{{ $teams[ $participant->user->tips[0]->placement[1] - 1 ]->abbreviation }}</td>
+                    <td>{{ $teams[ $participant->user->tips[0]->placement[2] - 1 ]->abbreviation }}</td>
+                    <td>{{ $teams[ $participant->user->tips[0]->placement[3] - 1 ]->abbreviation }}</td>
+                    <td>{{ $teams[ $participant->user->tips[0]->placement[4] - 1 ]->abbreviation }}</td>
+                    <td>{{ $teams[ $participant->user->tips[0]->placement[5] - 1 ]->abbreviation }}</td>
+                    <td>{{ $teams[ $participant->user->tips[0]->placement[6] - 1 ]->abbreviation }}</td>
+                    <td>{{ $teams[ $participant->user->tips[0]->placement[7] - 1 ]->abbreviation }}</td>
                 </tr>
             @endforeach
         </tbody>     
@@ -48,7 +68,7 @@
 </div>
 
 <small>
-  Uživatelské účty jsou na tomto aktualizovaném seznamu tipujících zobrazeny až po validaci adminem.
+  Uživatelské účty jsou na tomto aktualizovaném seznamu tipujících zobrazeny až po ověření adminem.
 </small>  
 
 @endsection

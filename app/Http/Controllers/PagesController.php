@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Match;
 use App\Participant;
 use App\User;
+use App\Team;
 use \Auth;
 use Illuminate\Support\Str;
 
@@ -66,10 +67,12 @@ class PagesController extends Controller
     {
         $participants = Participant::orderBy('score', 'desc')->get();
         $matches = Match::all();
+        $teams = Team::all();
         return view('pages.table')
             ->withTitle('table')
             ->withParticipants($participants)
-            ->withMatches($matches);
+            ->withMatches($matches)
+            ->withTeams($teams);
     }
 
     /**
@@ -100,7 +103,7 @@ class PagesController extends Controller
     
 
         // Redirect to post page w/ success mess.
-        flash()->success('Users avatar edited successfully!');
+        session()->flash('flash-message', 'Avatar úspěšně aktualizován!');
         return redirect()->route('profile');
     }
 
@@ -146,7 +149,7 @@ class PagesController extends Controller
     
 
         // Redirect to participants page w/ success mess.
-        flash()->success('Users alias edited successfully!');
+        session()->flash('flash-message', 'Alias úspěšně aktualizován!');
         return redirect()->route('participant.index');
     }
 

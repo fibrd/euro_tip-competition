@@ -11,17 +11,14 @@
  * @param integer $bonus_len
  * @return void
  */
-function countScore($tip_home, $tip_away, $result_home, $result_away, $bonus_len = 5)
+function countScore($tip_home, $tip_away, $result_home, $result_away)
 {
   $score = 0;
 
   if ($tip_home == $result_home && $tip_away == $result_away) {
-    $score = 4;
-    if ($tip_home + $tip_away >= $bonus_len) {
-      $score += 1;
-    }
+    $score = 5;
   } elseif ($tip_home - $tip_away == $result_home - $result_away) {
-    $score = 2;
+    $score = 1;
   } elseif (($tip_home - $tip_away) * ($result_home - $result_away) > 0) {
     $score = 1;
   }

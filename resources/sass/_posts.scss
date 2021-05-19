@@ -1,13 +1,16 @@
 .post-card {
-    background-color: rgba($color-primary, 1);
+    background-color: rgba($color-primary, 0.1);
     margin: 2em auto;
     width: 60%;
     border-radius: 0.75em;
-    font-size: 1.4em;
+    font-size: 1em;
     overflow: hidden;
     .card-footer {
         text-align: center;
         font-size: 0.8em;
+    }
+    .card-content {
+        padding: 0 1em;
     }
 }
 

@@ -55,7 +55,7 @@ class LoginController extends Controller
     }
 
     if ($this->attemptLogin($request)) {
-      // flash()->success('Welcome, ' . Auth::user()->fullname . '!'); 
+      // session()->flash('flash-message', 'Welcome, ' . Auth::user()->fullname . '!'); 
       session()->flash('flash-message', 'Vítejte, ' . Auth::user()->fullname . '!'); //customizable flash messages after login
       return $this->sendLoginResponse($request);
     }
@@ -110,7 +110,7 @@ class LoginController extends Controller
     $oauth_user = Socialite::driver('facebook')->user();
 
     if ($oauth_user->email == null) {
-      flash()->error('Login Error. Your email details have to be provided!');
+      session()->flash('flash-error', 'Login Error. Your email details have to be provided!');
 
       return redirect("login/");
     }
@@ -130,7 +130,7 @@ class LoginController extends Controller
     Auth::login($user, true);
 
     // redirect home
-    flash()->success('Vítejte, ' . Auth::user()->fullname . '!');
+    session()->flash('flash-message', 'Vítejte, ' . Auth::user()->fullname . '!');
     return redirect()->route('home');
   }
 }

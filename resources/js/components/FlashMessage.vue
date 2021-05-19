@@ -1,5 +1,13 @@
 <template>
-    <div class="notification is-success" v-show="visible">
+    <div
+        class="notification "
+        :class="[
+            { 'is-success': variant === 'success' },
+            { 'is-danger': variant === 'error' },
+            { 'is-warning': variant === 'warning' }
+        ]"
+        v-show="visible"
+    >
         <button class="delete"></button>
         <p>{{ text }}</p>
     </div>
@@ -11,26 +19,30 @@ export default {
         text: {
             type: String,
             required: true
+        },
+        variant: {
+            type: String,
+            required: true
         }
     },
     data() {
         return {
             visible: false
-        }
+        };
     },
     methods: {
         show() {
-            this.visible = true
+            this.visible = true;
             setTimeout(() => {
-                this.hide()
-            }, 3000)
+                this.hide();
+            }, 3000);
         },
         hide() {
-            this.visible = false
+            this.visible = false;
         }
     },
     created() {
-        this.show()
+        this.show();
     }
-}
+};
 </script>

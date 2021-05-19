@@ -49,7 +49,7 @@ class RegisterController extends Controller
       return $response;
     }
 
-    // flash()->success('Welcome, ' . Auth::user()->fullname . '!');
+    // session()->flash('flash-message', 'Welcome, ' . Auth::user()->fullname . '!');
     session()->flash('flash-message', 'Vítejte, ' . Auth::user()->fullname . '!'); //customizable flash messages after registration
     return $request->wantsJson()
       ? new Response('', 201)

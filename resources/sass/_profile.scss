@@ -4,11 +4,13 @@
 
 .profile-card {
     margin: 0 auto;
-    max-width: 20em;
-    background-color: rgba($color-primary, 0.2);
+    max-width: 30em;
+    background-color: rgba($color-primary, 0.1);
 }
 
 .big-avatar {
     padding-top: 4em;
+    margin: 0 auto;
+    max-width: 20em;
     padding-bottom: 1em;
 }
