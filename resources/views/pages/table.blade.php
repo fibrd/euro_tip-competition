@@ -16,7 +16,13 @@
                 <th colspan="4">Konečné výsledky</th>
 
                 @foreach ($matches as $match)
-                    <th>{{ $match->result['score'] }}</th>
+                  @if ($match->result['score'])
+                    <th style="position: sticky; top: -5px;">
+                      <div class="tag is-normal is-success is-light">
+                        {{ $match->result['score'] }}
+                      </div>
+                    </th>
+                  @endif
                 @endforeach
             </tr>
             <tr>
@@ -25,11 +31,11 @@
                 <th>Uživatel</th>
                 <th>Skóre</th>
                 @foreach ($matches as $match)
-                    <th style="position: sticky; top: 0;">
-                      <div class="tag is-normal is-warning is-light" >
+                    <th style="position: sticky; top: 20px;">
+                      <div class="tag is-normal is-warning is-light">
                         {{ $match->team_home->abbreviation }}
                       </div>
-                      <div class="tag is-normal is-warning is-light" >
+                      <div class="tag is-normal is-warning is-light">
                         {{ $match->team_away->abbreviation }}
                       </div>
                     </th>
