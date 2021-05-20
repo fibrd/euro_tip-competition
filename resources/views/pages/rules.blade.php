@@ -11,7 +11,7 @@
     
     
     <ul>
-        <li>Uživatelé tipují výsledky zápasu skupinové fáze MS v hokeji 2021.</li>
+        <li>Tipují se výsledky zápasů po základní hrací době skupinové fáze MS v hokeji 2021.</li>
         <li>Pro účast v tipovačce je nutno předem znát, případně kontaktovat její organizátory: Davida Fábryho nebo Jakuba Hanuščíka.</li>
         <li>Soutěže se můžete zůčastnit vyplněním tipovačky také v papírové podobě, která je k dispozici u organizátorů.</li>
         <li>Tipy mohou být vytvářeny a upravovány nejpozději do zahájení šampionátu: 21.&nbsp;5.&nbsp;2021,&nbsp;15:15&nbsp;.</li>

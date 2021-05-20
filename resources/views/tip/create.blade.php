@@ -146,7 +146,7 @@
                         <input class="input mb-4" required name="striker_name" placeholder="Jméno hráče" />
                     </div>
                     <div class="field is-primary mb-4">                      
-                        <input class="input mb-4" required name="striker_number" type="number" min="0" max="99" placeholder="Číslo hráče" />
+                        <input class="input mb-4" name="striker_number" type="number" min="1" max="99" placeholder="Číslo hráče (nepovinné)" />
                     </div>
                       <div class="field select is-primary">                        
                           <select name="striker_team">
@@ -166,7 +166,7 @@
                       <input class="input mb-4" required name="top_name" placeholder="Jméno hráče" />
                   </div>
                   <div class="field is-primary mb-4">                      
-                      <input class="input mb-4" required name="top_number" type="number" min="0" max="99" placeholder="Číslo hráče" />
+                      <input class="input mb-4" name="top_number" type="number" min="1" max="99" placeholder="Číslo hráče (nepovinné)" />
                   </div>
                     <div class="field select is-primary">                        
                         <select name="top_team">

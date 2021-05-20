@@ -173,14 +173,10 @@
               <label class="label">{{ (_('Nejlepší střelec turnaje'))}}</label>
               <div class="control has-text-centered">
                 <div class="field is-primary mb-4">                        
-                    <input class="input mb-4" required name="striker_name" placeholder="Jméno hráče" 
-                      @if ($tips->players[0])
-                        {{ "value=" . $tips->players[0] }}
-                      @endif  
-                    />
+                    <input class="input mb-4" required name="striker_name" placeholder="Jméno hráče" value="<?= $tips->players[0] ?>"/>
                 </div>
                 <div class="field is-primary mb-4">                      
-                    <input class="input mb-4" required name="striker_number" type="number" min="0" max="99" placeholder="Číslo hráče" 
+                    <input class="input mb-4" name="striker_number" type="number" min="1" max="99" placeholder="Číslo hráče (nepovinné)" 
                       @if ($tips->players[1])
                         {{ "value=" . $tips->players[1] }}
                       @endif  
@@ -205,14 +201,10 @@
             <label class="label">{{ (_('Nejlepší v kanadském bodování'))}}</label>
             <div class="control has-text-centered">
               <div class="field is-primary mb-4">                        
-                  <input class="input mb-4" required name="top_name" placeholder="Jméno hráče" 
-                    @if ($tips->players[3])
-                      {{ "value=" . $tips->players[3] }}
-                    @endif  
-                  />
+                    <input class="input mb-4" required name="top_name"" placeholder="Jméno hráče" value="<?= $tips->players[3] ?>"/>
               </div>
               <div class="field is-primary mb-4">                      
-                  <input class="input mb-4" required name="top_number" type="number" min="0" max="99" placeholder="Číslo hráče" 
+                  <input class="input mb-4" name="top_number" type="number" min="1" max="99" placeholder="Číslo hráče (nepovinné)"  
                     @if ($tips->players[4])
                       {{ "value=" . $tips->players[4] }}
                     @endif  

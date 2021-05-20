@@ -78,30 +78,34 @@ class TipController extends Controller
         $top_team = $request->get('top_team');
         $top_number = $request->get('top_number');
 
-        if (!$striker_name || !$striker_team || !$striker_number || !$top_name || !$top_team || !$top_number) {
+        if (!$striker_name || !$striker_team || !$top_name || !$top_team) {
           session()->flash('flash-error', 'Vyplňte všechna políčka v sekci individuální umístění.');
           return view('tip.create')
             ->withMatches($matches)
             ->withTeams($teams);
         }
-        if ($this->checkDuplicity($first_place, $second_place, $third_place, $fourth_place, $next_places)) {
-          session()->flash('flash-error', 'V celkovém umístění týmů byly nalezeny duplicity.');
-          return view('tip.create')
-            ->withMatches($matches)
-            ->withTeams($teams);
-        }
-
+        
         $matches_score = $this->getScoreFromRequest($request->get('home'), $request->get('away'));
         $placement = $this->getPlacementFromRequest($first_place, $second_place, $third_place, $fourth_place, $next_places);
         $players = $this->getPlayersFromRequest($striker_name, $striker_number, $striker_team, $top_name, $top_number, $top_team);
-
-        Tip::create([
-            'user_id' => Auth::id(),
-            'score' => $matches_score,
-            'placement' => $placement,
-            'players' => $players,
-        ]);
         
+        Tip::create([
+          'user_id' => Auth::id(),
+          'score' => $matches_score,
+          'placement' => $placement,
+          'players' => $players,
+          ]);
+
+        $tips = Auth::user()->tips->first();
+
+        if ($this->checkDuplicity($first_place, $second_place, $third_place, $fourth_place, $next_places)) {
+          session()->flash('flash-error', 'V celkovém umístění týmů byly nalezeny duplicity.');
+          return view('tip.edit')
+            ->withMatches($matches)
+            ->withTips($tips)
+            ->withTeams($teams);
+        }
+
         // flashmessage and redirect
         session()->flash('flash-message', 'Vaše tipy byly přidány.');
         return redirect()->route('tip.index');
@@ -151,21 +155,6 @@ class TipController extends Controller
         $top_team = $request->get('top_team');
         $top_number = $request->get('top_number');
 
-        if (!$striker_name || !$striker_team || !$striker_number || !$top_name || !$top_team || !$top_number) {
-          session()->flash('flash-error', 'Vyplňte všechna políčka v sekci individuální umístění.');
-          return view('tip.edit')
-            ->withMatches($matches)
-            ->withTeams($teams)
-            ->withTips($tips);
-        }
-        if ($this->checkDuplicity($first_place, $second_place, $third_place, $fourth_place, $next_places)) {
-          session()->flash('flash-error', 'V celkovém umístění týmů byly nalezeny duplicity.');
-          return view('tip.edit')
-            ->withMatches($matches)
-            ->withTeams($teams)
-            ->withTips($tips);
-        }
-
         $matches_score = $this->getScoreFromRequest($request->get('home'), $request->get('away'));
         $placement = $this->getPlacementFromRequest($first_place, $second_place, $third_place, $fourth_place, $next_places);
         $players = $this->getPlayersFromRequest($striker_name, $striker_number, $striker_team, $top_name, $top_number, $top_team);
@@ -177,6 +166,14 @@ class TipController extends Controller
             'placement' => $placement,
             'players' => $players,
         ]);
+
+        if ($this->checkDuplicity($first_place, $second_place, $third_place, $fourth_place, $next_places)) {
+          session()->flash('flash-error', 'V celkovém umístění týmů byly nalezeny duplicity.');
+          return view('tip.edit')
+            ->withMatches($matches)
+            ->withTips($tips)
+            ->withTeams($teams);
+        }
         
         // flashmessage and redirect
         session()->flash('flash-message', 'Vaše tipy byly upraveny.');
@@ -228,7 +225,7 @@ class TipController extends Controller
      * @param array $tips_away
      * @return string $players
      */
-    private function getPlayersFromRequest($striker_name, $striker_number, $striker_team, $top_name, $top_number, $top_team)
+    private function getPlayersFromRequest($striker_name, $striker_number = 1, $striker_team, $top_name, $top_number = 1, $top_team)
     {
         $players_array = [];
         array_push($players_array, $striker_name);

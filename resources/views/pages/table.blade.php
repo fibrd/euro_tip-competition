@@ -8,9 +8,9 @@
 
 @section('content')
 
-<div class="table-container">
+<div style="height: 75vh; overflow: auto;" class="table-container">
         
-    <table class="table is-bordered is-narrow is-hoverable is-fullwidth">
+    <table class="table is-bordered is-narrow is-striped is-hoverable is-fullwidth">
         <thead>
             <tr>
                 <th colspan="4">Konečné výsledky</th>
@@ -25,7 +25,14 @@
                 <th>Uživatel</th>
                 <th>Skóre</th>
                 @foreach ($matches as $match)
-                    <th>{{ $match->team_home->abbreviation }} vs. {{ $match->team_away->abbreviation }}</th>
+                    <th style="position: sticky; top: 0;">
+                      <div class="tag is-normal is-warning is-light" >
+                        {{ $match->team_home->abbreviation }}
+                      </div>
+                      <div class="tag is-normal is-warning is-light" >
+                        {{ $match->team_away->abbreviation }}
+                      </div>
+                    </th>
                 @endforeach
                 <th>Střelec</th>
                 <th>Kan. bodování</th>
@@ -45,7 +52,9 @@
                 <tr title="{{ $participant->user->alias }}">
                     <td>{{ $rank + 1 }}.</td>
                     <td><img src="{{ asset($participant->user->avatar) }}" alt="avatar" class="table-avatar" width="25"></td>
-                    <td>{{ $participant->user->alias }}</td>
+                    <td style="position: sticky; left: 0">
+                      <div class="tag is-medium is-info is-light" >{{ $participant->user->alias }}</div>
+                    </td>
                     <td>{{ $participant->score }}</td>
                     
                     @foreach ($participant->user->tips[0]->tips as $tip)
