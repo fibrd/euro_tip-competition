@@ -20,7 +20,7 @@
         <div class="message-body is-mobile has-text-centered">
 
             <blockquote>{{ $result->match->team_home->team }} vs. {{ $result->match->team_away->team }}</blockquote>
-            <blockquote>{{ $result->score }}</blockquote>
+            <blockquote>{{ $result->score_home }}:{{ $result->score_away }}</blockquote>
         </div>
         <div class="message-footer">
             <div class="field">

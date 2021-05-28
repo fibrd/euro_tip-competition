@@ -25,9 +25,9 @@
                     <div class="control has-text-centered">
                         <div class="select is-primary">                        
                             <select name="home">
-                                @for ($i = 0; $i < 10; $i++)
+                                @for ($i = 0; $i < 20; $i++)
                                     <option value="{{ $i }}"        
-                                        @if ($i == $result->score[0])
+                                        @if ($i == $result->score_home)
                                             {{ " selected" }}
                                         @endif                          
                                     >{{ $i }}</option>
@@ -41,9 +41,9 @@
                     <div class="control has-text-centered">
                         <div class="select is-primary">                        
                             <select name="away">
-                                @for ($i = 0; $i < 10; $i++)
+                                @for ($i = 0; $i < 20; $i++)
                                     <option value="{{ $i }}"        
-                                        @if ($i == $result->score[2])
+                                        @if ($i == $result->score_away)
                                             {{ " selected" }}
                                         @endif                          
                                     >{{ $i }}</option>

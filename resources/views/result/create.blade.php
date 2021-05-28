@@ -21,7 +21,7 @@
                     <div class="control has-text-centered">
                         <div class="select is-primary">                        
                             <select name="home">
-                                @for ($i = 0; $i < 10; $i++)
+                                @for ($i = 0; $i < 20; $i++)
                                     <option value="{{ $i }}">{{ $i }}</option>
                                 @endfor
                             </select>
@@ -33,7 +33,7 @@
                     <div class="control has-text-centered">
                         <div class="select is-primary">                        
                             <select name="away">
-                                @for ($i = 0; $i < 10; $i++)
+                                @for ($i = 0; $i < 20; $i++)
                                     <option value="{{ $i }}">{{ $i }}</option>
                                 @endfor
                             </select>

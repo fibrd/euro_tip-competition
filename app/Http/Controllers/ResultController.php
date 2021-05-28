@@ -71,15 +71,14 @@ class ResultController extends Controller
         $this->authorize('admin');
         
         $request->validate([
-            'home' => 'required|integer|between:0,9',
-            'away' => 'required|integer|between:0,9',
-            'match_id' => 'required|integer|between:1,36',
+            'home' => 'required|integer|between:0,19',
+            'away' => 'required|integer|between:0,19',
+            'match_id' => 'required|integer|between:1,136',
         ]);
-
-        $score = $request->home  . ':' . $request->away;
         
         $result = Result::create([
-            'score' => $score,
+            'score_home' => $request->home,
+            'score_away' => $request->away,
             'match_id' => $request->match_id,
         ]);
 
@@ -105,16 +104,16 @@ class ResultController extends Controller
         $this->authorize('admin');
         
         $request->validate([
-            'home' => 'required|integer|between:0,9',
-            'away' => 'required|integer|between:0,9',
-            'match_id' => 'required|integer|between:1,36',
+            'home' => 'required|integer|between:0,19',
+            'away' => 'required|integer|between:0,19',
+            'match_id' => 'required|integer|between:1,136',
         ]);
 
-        $score = $request->home  . ':' . $request->away;
         $result = Result::where('match_id', $request->match_id)->first();
 
         $result->update([
-            'score' => $score,
+            'score_home' => $request->home,
+            'score_away' => $request->away,
             'match_id' => $request->match_id,
         ]);
 

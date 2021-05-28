@@ -7,30 +7,30 @@ use App\Participant;
 
 class Result extends Model
 {
-    protected $fillable = ['score', 'match_id'];
+  protected $fillable = ['score_home', 'score_away', 'match_id'];
 
-    public $timestamps = false;
+  public $timestamps = false;
 
-    /**
-     * Function for updating all players score
-     *
-     * @return void
-     */
-    public function updatePlayersScore()
-    {
-        $participants = Participant::all();
-        foreach ($participants as $participant) {
-            $score = $participant->recountScore();
-            $participant->update([
-                'score' => $score,
-            ]);
-        }
+  /**
+   * Function for updating all players score
+   *
+   * @return void
+   */
+  public function updatePlayersScore()
+  {
+    $participants = Participant::all();
+    foreach ($participants as $participant) {
+      $score = $participant->recountScore();
+      $participant->update([
+        'score' => $score,
+      ]);
     }
+  }
 
-        
 
-    public function match()
-    {
-        return $this->belongsTo('App\Match');
-    }
+
+  public function match()
+  {
+    return $this->belongsTo('App\Match');
+  }
 }

@@ -16,10 +16,10 @@
                 <th colspan="4">Konečné výsledky</th>
 
                 @foreach ($matches as $match)
-                  @if ($match->result['score'])
+                  @if (isset($match->result['score_home']) && isset($match->result['score_away']))
                     <th style="position: sticky; top: -5px;">
                       <div class="tag is-normal is-success is-light">
-                        {{ $match->result['score'] }}
+                        {{ $match->result['score_home'] }}:{{ $match->result['score_away'] }}
                       </div>
                     </th>
                   @endif

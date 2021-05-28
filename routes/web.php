@@ -21,7 +21,7 @@ Route::get('/rules', 'PagesController@rules')->name('rules');
 Route::get('/profile', 'PagesController@profile')->name('profile');
 Route::get('/table', 'PagesController@table')->name('table');
 Route::resource('/post', 'PostController')->except(['create', 'update', 'edit']);
-Route::resource('/tip', 'TipController')->except(['show', 'destroy']);
+Route::resource('/tip', 'TipController')->except(['edit', 'create', 'store', 'update', 'show', 'destroy']);
 Route::get('/avatar', 'PagesController@avatar')->name('avatar');
 Route::post('/avatar', 'PagesController@storeAvatar')->name('avatar.store');
 

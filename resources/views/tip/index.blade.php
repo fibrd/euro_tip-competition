@@ -8,7 +8,7 @@
 
 @if ( isset($tips) )
 
-<a href="{{ route('tip.edit', $tips->id) }}" class="button is-link is-default">{{ __('Upravit mé tipy') }}</a>
+{{-- <a href="{{ route('tip.edit', $tips->id) }}" class="button is-link is-default">{{ __('Upravit mé tipy') }}</a> --}}
 <table class="table is-fullwidth">
 
     <thead>
@@ -29,9 +29,9 @@
                 <td>{{ $matches[$match_id]->team_home->abbreviation }}</td>
                 <td>{{ $matches[$match_id]->team_away->abbreviation }}</td>
                 <td>{{ $tip_score[0] }}:{{ $tip_score[1] }}</td>
-                @if (isset($results[$match_id]->score))
-                    <td>{{ $results[$match_id]->score }}</td>
-                    <td>{{ countScore($tip_score[0], $tip_score[1], $results[$match_id]->score[0], $results[$match_id]->score[2]) }}</td>
+                @if (isset($results[$match_id]->score_home) && isset($results[$match_id]->score_away))
+                    <td>{{ $results[$match_id]->score_home }}:{{ $results[$match_id]->score_away }}</td>
+                    <td>{{ countScore($tip_score[0], $tip_score[1], $results[$match_id]->score_home, $results[$match_id]->score_away) }}</td>
                 @else
                     <td>--</td>
                     <td>--</td>
@@ -46,8 +46,8 @@
 
 
 @else
-    <p class="h6">{{ __('Žádné tipy uživatele nebyly nalezeny. Prosím vyplňte po kliknutí zde. ') }}</p>
-    <a href="{{ route('tip.create') }}" class="button is-primary">{{ __('Přidat nové tipy') }}</a>
+    <p class="h6">{{ __('Žádné tipy uživatele nebyly nalezeny.') }}</p>
+    {{-- <a href="{{ route('tip.create') }}" class="button is-primary">{{ __('Přidat nové tipy') }}</a> --}}
 @endif
 
     

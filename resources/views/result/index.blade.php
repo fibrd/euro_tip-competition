@@ -21,8 +21,8 @@
             <tr>
                 <td>{{ $match->team_home->abbreviation }}</td>
                 <td>{{ $match->team_away->abbreviation }}</td>
-                @if (isset( $match->result->score ))
-                    <td>{{ $match->result->score }}</td>
+                @if (isset($match->result->score_home) && isset($match->result->score_away))
+                    <td>{{ $match->result->score_home }}:{{ $match->result->score_away }}</td>
                     <td><a href="{{ route('result.edit', $match->id) }}">upravit</a></td>
                     <td><a href="{{ route('result.delete', $match->id) }}">vymazat</a></td>
                 @else
